@@ -1,26 +1,20 @@
 /* lorcan.dev apps: one stylesheet, no framework, no JS, no external requests.
-   Late-90s corporate web: Georgia + Verdana (both drawn in 1996 for screens),
-   a flat title bar, classic link colours, a plain bordered table. */
+   System fonts only. One accent colour, used for links and the mark. */
 :root {
   --bg: #ffffff;
-  --text: #000000;
-  --muted: #4d4d4d;
-  --link: #0033cc;
-  --visited: #551a8b;
-  --bar: #000066;
-  --bar-text: #ffffff;
-  --rule: #808080;
+  --text: #0b0b12;
+  --muted: #51525e;
+  --accent: #2430c8;
+  --rule: #d9d9e0;
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #0c0c0c;
-    --text: #ececec;
-    --muted: #b0b0b0;
-    --link: #8fb4ff;
-    --visited: #c5a3ff;
-    --bar: #1c1c6e;
-    --rule: #6a6a6a;
+    --bg: #0a0a10;
+    --text: #ececf2;
+    --muted: #a2a3b2;
+    --accent: #9aa3ff;
+    --rule: #2a2a36;
     color-scheme: dark;
   }
 }
@@ -30,53 +24,58 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font: 1rem/1.55 Verdana, Geneva, "DejaVu Sans", sans-serif;
+  font: 1rem/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
-.wrap { width: 100%; max-width: 44rem; margin: 0 auto; padding: 0 1.25rem; }
-main.wrap { flex: 1; padding-top: 1.5rem; padding-bottom: 3rem; }
+.wrap { width: 100%; max-width: 44rem; margin: 0 auto; padding: 0 1.5rem; }
+main.wrap { flex: 1; padding-top: 3.5rem; padding-bottom: 5rem; }
 
-a { color: var(--link); }
-a:visited { color: var(--visited); }
+a { color: var(--accent); text-underline-offset: .2em; }
 a:hover { text-decoration-thickness: 2px; }
-a:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
-.skip { position: absolute; left: -999px; top: 0; background: var(--bg); padding: .4rem .8rem; border: 1px solid var(--rule); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+.skip { position: absolute; left: -999px; top: 0; background: var(--bg); padding: .5rem .9rem; border: 1px solid var(--rule); }
 .skip:focus { left: .5rem; top: .5rem; }
 
-/* the one bold element: a flat title bar */
-.titlebar { background: var(--bar); color: var(--bar-text); }
-.titlebar .wrap { padding-top: 1.1rem; padding-bottom: 1.1rem; }
-.wordmark, .wordmark:visited { font: bold 1.75rem/1.2 Georgia, "Times New Roman", serif; color: var(--bar-text); text-decoration: none; }
+.site-header .wrap { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding-top: 1.75rem; }
+.wordmark { font-weight: 600; color: var(--text); text-decoration: none; letter-spacing: -.01em; }
 .wordmark:hover { text-decoration: underline; }
-.site-nav { border-bottom: 1px solid var(--rule); font-size: .875rem; }
-.site-nav .wrap { padding-top: .5rem; padding-bottom: .5rem; }
+.site-header nav { display: flex; gap: 1.4rem; font-size: .9375rem; }
+.site-header nav a { color: var(--muted); text-decoration: none; }
+.site-header nav a:hover { color: var(--text); text-decoration: underline; }
 
-h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; line-height: 1.25; }
-h1 { font-size: 1.6rem; margin: 0 0 .4rem; }
-h2 { font-size: 1.2rem; margin: 2rem 0 .5rem; }
-h3 { font-size: 1.05rem; margin: 1.5rem 0 .3rem; }
-p, ul, ol, table { margin: 0 0 1rem; }
+h1, h2, h3, .statement { font-family: ui-serif, "New York", Georgia, serif; font-weight: 500; line-height: 1.2; letter-spacing: -.01em; }
+h1 { font-size: 2rem; margin: 0 0 .75rem; }
+h2 { font-size: 1.35rem; margin: 2.5rem 0 .6rem; }
+h3 { font-size: 1.1rem; margin: 1.75rem 0 .3rem; }
+p, ul, ol { margin: 0 0 1.1rem; }
 ul, ol { padding-left: 1.4rem; }
-code { font: .9em ui-monospace, Menlo, Consolas, "Courier New", monospace; }
+code { font: .9em ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
 .meta { color: var(--muted); font-size: .875rem; }
-article p, article li { max-width: 40rem; }
+article { max-width: 38rem; }
 
-/* app list: a plain bordered table */
-table.apps { width: 100%; border-collapse: collapse; font-size: .9375rem; }
-.apps th, .apps td { border: 1px solid var(--rule); padding: .5rem .7rem; text-align: left; vertical-align: top; }
-.apps th { font-weight: bold; }
-.apps caption { caption-side: bottom; text-align: left; padding-top: .4rem; color: var(--muted); font-size: .8125rem; }
-.apps td img { display: block; width: 40px; height: 40px; margin-bottom: .4rem; border-radius: 9px; }
-.apps .sub { display: block; color: var(--muted); }
+/* home */
+.mark { display: block; width: 6rem; height: 6rem; fill: var(--accent); color: var(--accent); margin: 0 0 2.5rem -.5rem; }
+.statement { font-size: clamp(1.9rem, 5.5vw, 2.75rem); margin: 0 0 1rem; max-width: 22ch; }
+.lede { color: var(--muted); font-size: 1.125rem; margin: 0 0 3.5rem; }
+.section-title { font: 600 .9375rem/1.4 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; letter-spacing: 0; margin: 0 0 .75rem; padding-bottom: .6rem; border-bottom: 1px solid var(--rule); }
+.apps { list-style: none; padding: 0; margin: 0 0 3rem; }
+.apps li { display: flex; gap: 1rem; padding: 1.1rem 0; border-bottom: 1px solid var(--rule); }
+.apps img { width: 3.5rem; height: 3.5rem; border-radius: 12px; flex: none; }
+.apps .name { font: 500 1.2rem/1.3 ui-serif, "New York", Georgia, serif; }
+.apps .name a { color: var(--text); text-decoration: none; }
+.apps .name a:hover { text-decoration: underline; }
+.apps .tagline { display: block; color: var(--muted); }
+.apps .links { display: flex; gap: 1.2rem; margin-top: .35rem; font-size: .9375rem; }
+.empty { color: var(--muted); }
 
-.site-footer { color: var(--muted); font-size: .8125rem; }
-.site-footer .wrap { padding-bottom: 2rem; }
-.site-footer hr { border: 0; border-top: 1px solid var(--rule); margin: 0 0 .8rem; }
-.site-footer p { margin: 0 0 .25rem; }
-.site-footer a, .site-footer a:visited { color: var(--muted); }
+.site-footer { border-top: 1px solid var(--rule); color: var(--muted); font-size: .875rem; }
+.site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .4rem 1.5rem; padding-top: 1.25rem; padding-bottom: 2rem; }
+.site-footer p { margin: 0; }
+.site-footer nav { display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; }
+.site-footer a { color: var(--muted); }
 .site-footer a:hover { color: var(--text); }
 
-@media (max-width: 480px) { .wordmark { font-size: 1.5rem; } }
-@media print { .titlebar, .site-nav, .site-footer, .skip { display: none; } }
+@media (max-width: 480px) { main.wrap { padding-top: 2.5rem; } .mark { width: 4.5rem; height: 4.5rem; margin-bottom: 2rem; } }
+@media print { .site-header nav, .site-footer, .skip, .mark { display: none; } }

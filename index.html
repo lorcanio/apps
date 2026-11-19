@@ -2,24 +2,26 @@
 layout: default
 description: Small, private iPhone apps by lorcan.dev. Privacy policies and support for each app.
 ---
-<h1>iPhone apps</h1>
-<p>Small apps that keep your data on your phone. No accounts, no adverts, no tracking.</p>
+{% include mark.html %}
+<p class="statement">Small iPhone apps that keep your data on your phone.</p>
+<p class="lede">No accounts, no adverts, no tracking.</p>
 
-<table class="apps">
-  <caption>Each app has its own privacy policy and support page.</caption>
-  <thead><tr><th scope="col">App</th><th scope="col">Pages</th></tr></thead>
-  <tbody>
-  {% if site.data.apps and site.data.apps.size > 0 %}
-    {% for app in site.data.apps %}
-    <tr>
-      <td><img src="{{ app.icon }}" alt="" width="40" height="40"><a href="/{{ app.slug }}/">{{ app.name }}</a><span class="sub">{{ app.tagline }}</span></td>
-      <td><a href="{{ app.store_url }}">App Store</a><br><a href="/{{ app.slug }}/privacy">Privacy</a><br><a href="/{{ app.slug }}/support">Support</a></td>
-    </tr>
-    {% endfor %}
-  {% else %}
-    <tr><td colspan="2">The first app is in progress. Its page, privacy policy and support page will be listed here when it is on the App Store.</td></tr>
-  {% endif %}
-  </tbody>
-</table>
+<h2 class="section-title">Apps</h2>
+{% if site.data.apps and site.data.apps.size > 0 %}
+<ul class="apps">
+  {% for app in site.data.apps %}
+  <li>
+    <img src="{{ app.icon }}" alt="" width="56" height="56">
+    <div>
+      <span class="name"><a href="/{{ app.slug }}/">{{ app.name }}</a></span>
+      <span class="tagline">{{ app.tagline }}</span>
+      <span class="links"><a href="{{ app.store_url }}">App Store</a><a href="/{{ app.slug }}/privacy">Privacy</a><a href="/{{ app.slug }}/support">Support</a></span>
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p class="empty">The first app is in progress. Its page, privacy policy and support page will be listed here once it is on the App Store.</p>
+{% endif %}
 
 <p>Questions about an app: <a href="mailto:support@lorcan.dev">support@lorcan.dev</a></p>
