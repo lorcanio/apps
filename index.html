@@ -2,26 +2,25 @@
 layout: default
 description: Small, private iPhone apps by lorcan.dev. Privacy policies and support for each app.
 ---
-<h1>lorcan.dev</h1>
-<p class="lede">Small, private iPhone apps. No accounts, no adverts, no tracking.</p>
+<p>Small, private iPhone apps. No accounts, no adverts, no tracking.</p>
 
 <h2>Apps</h2>
 {% if site.data.apps and site.data.apps.size > 0 %}
 <ul class="apps">
   {% for app in site.data.apps %}
-  <li class="app">
-    <img src="{{ app.icon }}" alt="" width="64" height="64">
+  <li>
+    <img src="{{ app.icon }}" alt="" width="48" height="48">
     <div>
-      <h3><a href="/{{ app.slug }}/">{{ app.name }}</a></h3>
-      <p>{{ app.tagline }}</p>
-      <a class="badge" href="{{ app.store_url }}">View on the App Store</a>
+      <strong><a href="/{{ app.slug }}/">{{ app.name }}</a></strong>
+      <span>{{ app.tagline }}</span>
+      <a href="{{ app.store_url }}">App Store</a> | <a href="/{{ app.slug }}/privacy">Privacy</a> | <a href="/{{ app.slug }}/support">Support</a>
     </div>
   </li>
   {% endfor %}
 </ul>
 {% else %}
-<div class="soon">
-  <h2>First app coming soon</h2>
-  <p>Its privacy policy and support page will live here.</p>
-</div>
+<p>The first app is coming soon. Its privacy policy and support page will be listed here.</p>
 {% endif %}
+
+<h2>Contact</h2>
+<p>Questions or problems: <a href="mailto:support@lorcan.dev">support@lorcan.dev</a>. See <a href="/support">Support</a> for what to include.</p>

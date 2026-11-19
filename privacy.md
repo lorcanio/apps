@@ -6,7 +6,7 @@ permalink: /privacy
 ---
 # Privacy
 
-Last updated: 19 November 2026
+<span class="meta">Last updated: 19 November 2026</span>
 
 This page covers this website, apps.lorcan.dev. Each app has its own privacy policy at `/<app>/privacy`, linked from the app's page and from its App Store listing.
 
