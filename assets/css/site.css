@@ -1,0 +1,87 @@
+/* lorcan.dev apps: one stylesheet, no framework, no JS, no external requests.
+   System fonts only. One accent colour, used for links and the mark. */
+:root {
+  --bg: #ffffff;
+  --text: #0b0b12;
+  --muted: #51525e;
+  --accent: #2430c8;
+  --rule: #d9d9e0;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0a0a10;
+    --text: #ececf2;
+    --muted: #a2a3b2;
+    --accent: #9aa3ff;
+    --rule: #2a2a36;
+    color-scheme: dark;
+  }
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 1rem/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.wrap { width: 100%; max-width: 44rem; margin: 0 auto; padding: 0 1.5rem; }
+main.wrap { flex: 1; padding-top: 3.5rem; padding-bottom: 5rem; }
+
+a { color: var(--accent); text-underline-offset: .2em; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+.skip { position: absolute; left: -999px; top: 0; background: var(--bg); padding: .5rem .9rem; border: 1px solid var(--rule); }
+.skip:focus { left: .5rem; top: .5rem; }
+
+.site-header .wrap { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding-top: 1.75rem; }
+.site-header .wrap { align-items: center; }
+.site-header nav { margin-left: auto; }
+.site-header nav { display: flex; gap: 1.4rem; font-size: .9375rem; }
+.site-header nav a { color: var(--muted); text-decoration: none; }
+.site-header nav a:hover { color: var(--text); text-decoration: underline; }
+
+h1, h2, h3, .statement { font-family: ui-serif, "New York", Georgia, serif; font-weight: 500; line-height: 1.2; letter-spacing: -.01em; }
+h1 { font-size: 2rem; margin: 0 0 .75rem; }
+h2 { font-size: 1.35rem; margin: 2.5rem 0 .6rem; }
+h3 { font-size: 1.1rem; margin: 1.75rem 0 .3rem; }
+p, ul, ol { margin: 0 0 1.1rem; }
+ul, ol { padding-left: 1.4rem; }
+code { font: .9em ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+.meta { color: var(--muted); font-size: .875rem; }
+article { max-width: 38rem; }
+
+/* home */
+.logo { display: block; width: auto; }
+.logo-ink { fill: var(--text); }
+.logo-dot { fill: var(--accent); }
+.wordmark { display: block; line-height: 0; }
+.wordmark .logo { height: 1.6rem; }
+.hero-logo { margin: 0 0 2.5rem; }
+.hero-logo .logo { height: clamp(3.4rem, 12vw, 5.5rem); margin-left: -.3rem; }
+.statement { font-size: clamp(1.9rem, 5.5vw, 2.75rem); margin: 0 0 1rem; max-width: 22ch; }
+.lede { color: var(--muted); font-size: 1.125rem; margin: 0 0 3.5rem; }
+.section-title { font: 600 .9375rem/1.4 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; letter-spacing: 0; margin: 0 0 .75rem; padding-bottom: .6rem; border-bottom: 1px solid var(--rule); }
+.apps { list-style: none; padding: 0; margin: 0 0 3rem; }
+.apps li { display: flex; gap: 1rem; padding: 1.1rem 0; border-bottom: 1px solid var(--rule); }
+.apps img { width: 3.5rem; height: 3.5rem; border-radius: 12px; flex: none; }
+.apps .name { font: 500 1.2rem/1.3 ui-serif, "New York", Georgia, serif; }
+.apps .name a { color: var(--text); text-decoration: none; }
+.apps .name a:hover { text-decoration: underline; }
+.apps .tagline { display: block; color: var(--muted); }
+.apps .links { display: flex; gap: 1.2rem; margin-top: .35rem; font-size: .9375rem; }
+.empty { color: var(--muted); }
+
+.site-footer { border-top: 1px solid var(--rule); color: var(--muted); font-size: .875rem; }
+.site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .4rem 1.5rem; padding-top: 1.25rem; padding-bottom: 2rem; }
+.site-footer p { margin: 0; }
+.site-footer nav { display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; }
+.site-footer a { color: var(--muted); }
+.site-footer a:hover { color: var(--text); }
+
+@media (max-width: 480px) { main.wrap { padding-top: 2.5rem; } .hero-logo { margin-bottom: 2rem; } }
+@media print { .site-header nav, .site-footer, .skip { display: none; } }

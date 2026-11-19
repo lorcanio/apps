@@ -1,0 +1,14 @@
+title: lorcan.dev
+description: Small apps, private by design. iPhone apps by lorcan.dev.
+url: https://apps.lorcan.dev
+lang: en-GB
+markdown: kramdown
+# No theme and no plugins beyond the GitHub Pages defaults: the layouts and
+# assets/css/site.css in this repo are the whole design.
+exclude:
+  - _template-app
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle

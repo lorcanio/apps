@@ -1,0 +1,27 @@
+---
+layout: default
+description: Small apps, private by design. iPhone apps by lorcan.dev, with privacy policies and support for each app.
+---
+<div class="hero-logo">{% include logo.html %}</div>
+<h1 class="statement">Small apps, private by design.</h1>
+<p class="lede">iPhone apps with no accounts, no adverts and no tracking.</p>
+
+<h2 class="section-title">Apps</h2>
+{% if site.data.apps and site.data.apps.size > 0 %}
+<ul class="apps">
+  {% for app in site.data.apps %}
+  <li>
+    <img src="{{ app.icon }}" alt="" width="56" height="56">
+    <div>
+      <span class="name"><a href="/{{ app.slug }}/">{{ app.name }}</a></span>
+      <span class="tagline">{{ app.tagline }}</span>
+      <span class="links"><a href="{{ app.store_url }}">App Store</a><a href="/{{ app.slug }}/privacy">Privacy</a><a href="/{{ app.slug }}/support">Support</a></span>
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p class="empty">The first app is in progress. Its page, privacy policy and support page will be listed here once it is on the App Store.</p>
+{% endif %}
+
+<p>Questions about an app: <a href="mailto:support@lorcan.dev">support@lorcan.dev</a></p>

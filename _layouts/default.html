@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+<head>
+{% include head.html %}
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    {% unless page.url == "/" %}<a class="wordmark" href="/" aria-label="lorcan.dev, home">{% include logo.html %}</a>{% endunless %}
+    <nav aria-label="Main"><a href="/">Apps</a><a href="/support">Support</a><a href="/privacy">Privacy</a></nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+{{ content }}
+</main>
+{% include footer.html %}
+</body>
+</html>
