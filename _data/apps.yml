@@ -1,0 +1,8 @@
+# One entry per published app. While this list is empty the home page shows
+# the "first app coming soon" state. Example (keep commented until real):
+#
+# - name: App Name
+#   slug: app-name                 # pages live at /app-name/, /app-name/privacy, /app-name/support
+#   tagline: One line saying what it does.
+#   icon: /app-name/icon.png       # 120x120 or larger PNG
+#   store_url: https://apps.apple.com/app/idXXXXXXXXXX
