@@ -2,25 +2,24 @@
 layout: default
 description: Small, private iPhone apps by lorcan.dev. Privacy policies and support for each app.
 ---
-<p>Small, private iPhone apps. No accounts, no adverts, no tracking.</p>
+<h1>iPhone apps</h1>
+<p>Small apps that keep your data on your phone. No accounts, no adverts, no tracking.</p>
 
-<h2>Apps</h2>
-{% if site.data.apps and site.data.apps.size > 0 %}
-<ul class="apps">
-  {% for app in site.data.apps %}
-  <li>
-    <img src="{{ app.icon }}" alt="" width="48" height="48">
-    <div>
-      <strong><a href="/{{ app.slug }}/">{{ app.name }}</a></strong>
-      <span>{{ app.tagline }}</span>
-      <a href="{{ app.store_url }}">App Store</a> | <a href="/{{ app.slug }}/privacy">Privacy</a> | <a href="/{{ app.slug }}/support">Support</a>
-    </div>
-  </li>
-  {% endfor %}
-</ul>
-{% else %}
-<p>The first app is coming soon. Its privacy policy and support page will be listed here.</p>
-{% endif %}
+<table class="apps">
+  <caption>Each app has its own privacy policy and support page.</caption>
+  <thead><tr><th scope="col">App</th><th scope="col">Pages</th></tr></thead>
+  <tbody>
+  {% if site.data.apps and site.data.apps.size > 0 %}
+    {% for app in site.data.apps %}
+    <tr>
+      <td><img src="{{ app.icon }}" alt="" width="40" height="40"><a href="/{{ app.slug }}/">{{ app.name }}</a><span class="sub">{{ app.tagline }}</span></td>
+      <td><a href="{{ app.store_url }}">App Store</a><br><a href="/{{ app.slug }}/privacy">Privacy</a><br><a href="/{{ app.slug }}/support">Support</a></td>
+    </tr>
+    {% endfor %}
+  {% else %}
+    <tr><td colspan="2">The first app is in progress. Its page, privacy policy and support page will be listed here when it is on the App Store.</td></tr>
+  {% endif %}
+  </tbody>
+</table>
 
-<h2>Contact</h2>
-<p>Questions or problems: <a href="mailto:support@lorcan.dev">support@lorcan.dev</a>. See <a href="/support">Support</a> for what to include.</p>
+<p>Questions about an app: <a href="mailto:support@lorcan.dev">support@lorcan.dev</a></p>
