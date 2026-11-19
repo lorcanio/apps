@@ -39,8 +39,8 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-
 .skip:focus { left: .5rem; top: .5rem; }
 
 .site-header .wrap { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding-top: 1.75rem; }
-.wordmark { font-weight: 600; color: var(--text); text-decoration: none; letter-spacing: -.01em; }
-.wordmark:hover { text-decoration: underline; }
+.site-header .wrap { align-items: center; }
+.site-header nav { margin-left: auto; }
 .site-header nav { display: flex; gap: 1.4rem; font-size: .9375rem; }
 .site-header nav a { color: var(--muted); text-decoration: none; }
 .site-header nav a:hover { color: var(--text); text-decoration: underline; }
@@ -56,7 +56,13 @@ code { font: .9em ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
 article { max-width: 38rem; }
 
 /* home */
-.mark { display: block; width: 6rem; height: 6rem; fill: var(--accent); color: var(--accent); margin: 0 0 2.5rem -.5rem; }
+.logo { display: block; width: auto; }
+.logo-ink { fill: var(--text); }
+.logo-dot { fill: var(--accent); }
+.wordmark { display: block; line-height: 0; }
+.wordmark .logo { height: 1.6rem; }
+.hero-logo { margin: 0 0 2.5rem; }
+.hero-logo .logo { height: clamp(3.4rem, 12vw, 5.5rem); margin-left: -.3rem; }
 .statement { font-size: clamp(1.9rem, 5.5vw, 2.75rem); margin: 0 0 1rem; max-width: 22ch; }
 .lede { color: var(--muted); font-size: 1.125rem; margin: 0 0 3.5rem; }
 .section-title { font: 600 .9375rem/1.4 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; letter-spacing: 0; margin: 0 0 .75rem; padding-bottom: .6rem; border-bottom: 1px solid var(--rule); }
@@ -77,5 +83,5 @@ article { max-width: 38rem; }
 .site-footer a { color: var(--muted); }
 .site-footer a:hover { color: var(--text); }
 
-@media (max-width: 480px) { main.wrap { padding-top: 2.5rem; } .mark { width: 4.5rem; height: 4.5rem; margin-bottom: 2rem; } }
-@media print { .site-header nav, .site-footer, .skip, .mark { display: none; } }
+@media (max-width: 480px) { main.wrap { padding-top: 2.5rem; } .hero-logo { margin-bottom: 2rem; } }
+@media print { .site-header nav, .site-footer, .skip { display: none; } }
