@@ -11,11 +11,11 @@ description: Small apps, private by design. iPhone apps by lorcan.dev, with priv
 <ul class="apps">
   {% for app in site.data.apps %}
   <li>
-    <img src="{{ app.icon }}" alt="" width="56" height="56">
+    {% if app.icon %}<img src="{{ app.icon }}" alt="" width="56" height="56">{% endif %}
     <div>
       <span class="name"><a href="/{{ app.slug }}/">{{ app.name }}</a></span>
       <span class="tagline">{{ app.tagline }}</span>
-      <span class="links"><a href="{{ app.store_url }}">App Store</a><a href="/{{ app.slug }}/privacy">Privacy</a><a href="/{{ app.slug }}/support">Support</a></span>
+      <span class="links">{% if app.store_url %}<a href="{{ app.store_url }}">App Store</a>{% endif %}<a href="/{{ app.slug }}/privacy">Privacy</a><a href="/{{ app.slug }}/support">Support</a></span>
     </div>
   </li>
   {% endfor %}

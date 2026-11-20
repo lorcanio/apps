@@ -4,5 +4,9 @@
 # - name: App Name
 #   slug: app-name                 # pages live at /app-name/, /app-name/privacy, /app-name/support
 #   tagline: One line saying what it does.
-#   icon: /app-name/icon.png       # 120x120 or larger PNG
-#   store_url: https://apps.apple.com/app/idXXXXXXXXXX
+#   icon: /app-name/icon.png       # 120x120 or larger PNG (optional)
+#   store_url: https://apps.apple.com/app/idXXXXXXXXXX   (optional)
+
+- name: ai-youtube keywords
+  slug: ai-youtube-keywords
+  tagline: Reads keyword search metrics from Google Ads. Runs on your own computer.
