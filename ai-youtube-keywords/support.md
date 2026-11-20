@@ -1,10 +1,10 @@
 ---
 layout: page
-title: "Support: ai-youtube keywords"
-description: "How to get help with ai-youtube keywords."
+title: "Support: lorcan.dev keywords"
+description: "How to get help with lorcan.dev keywords."
 permalink: /ai-youtube-keywords/support
 ---
-# ai-youtube keywords support
+# lorcan.dev keywords support
 
 Email **[support@lorcan.dev](mailto:support@lorcan.dev)** and we will reply within two working days. Please say what you ran, and include the error message if there was one. Do not send passwords, refresh tokens or client secrets.
 
@@ -17,7 +17,7 @@ No. There is no lorcan.dev account. You sign in with your own Google account.
 Only on your computer. See the [privacy policy](/ai-youtube-keywords/privacy).
 
 **How do I stop the tool accessing my Google account?**
-Go to [myaccount.google.com/permissions](https://myaccount.google.com/permissions), choose ai-youtube keywords and remove access.
+Go to [myaccount.google.com/permissions](https://myaccount.google.com/permissions), choose lorcan.dev keywords and remove access.
 
 **It says the app is not verified, or access is blocked.**
 The tool may be limited to approved testers while Google reviews it. Email us and we will help.

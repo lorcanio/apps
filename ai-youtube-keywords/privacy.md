@@ -1,14 +1,14 @@
 ---
 layout: page
-title: "Privacy: ai-youtube keywords"
-description: "How ai-youtube keywords handles Google Ads data."
+title: "Privacy: lorcan.dev keywords"
+description: "How lorcan.dev keywords handles Google Ads data."
 permalink: /ai-youtube-keywords/privacy
 ---
-# Privacy policy: ai-youtube keywords
+# Privacy policy: lorcan.dev keywords
 
 <span class="meta">Last updated: 20 November 2026</span>
 
-ai-youtube keywords is made by lorcan.dev. This page explains what happens to your information when you use it.
+lorcan.dev keywords is a tool made by lorcan.dev. This page explains what happens to your information when you use it.
 
 ## In short
 

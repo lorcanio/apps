@@ -1,10 +1,10 @@
 ---
 layout: page
-title: "ai-youtube keywords"
+title: "lorcan.dev keywords"
 description: "A small command-line tool by lorcan.dev that reads keyword search metrics from Google Ads."
 permalink: /ai-youtube-keywords/
 ---
-# ai-youtube keywords
+# lorcan.dev keywords
 
 A small command-line tool that reads keyword search metrics (search volume, competition and bid ranges) from Google Ads, so video topics can be planned around what people search for.
 

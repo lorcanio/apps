@@ -1,14 +1,14 @@
 ---
 layout: page
-title: "Terms: ai-youtube keywords"
-description: "Terms of service for ai-youtube keywords."
+title: "Terms: lorcan.dev keywords"
+description: "Terms of service for lorcan.dev keywords."
 permalink: /ai-youtube-keywords/terms
 ---
-# Terms of service: ai-youtube keywords
+# Terms of service: lorcan.dev keywords
 
 <span class="meta">Last updated: 20 November 2026</span>
 
-These terms apply to ai-youtube keywords, a command-line tool made by lorcan.dev. By using it you agree to them.
+These terms apply to lorcan.dev keywords, a command-line tool made by lorcan.dev. By using it you agree to them.
 
 ## What the tool is
 
